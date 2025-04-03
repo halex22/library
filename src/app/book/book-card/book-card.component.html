@@ -5,7 +5,9 @@
   <div class="info-container">
     <h3>{{book.title}}</h3>
     <ul>
-      <li>{{book.authors[0].name}}</li>
+      <li *ngFor="let author of book.authors">
+        <app-author-card [author]="author"></app-author-card>
+      </li>
     </ul>
 
     <p class="book-summary">{{book.summaries[0]}}</p>

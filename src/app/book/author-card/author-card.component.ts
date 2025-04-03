@@ -9,5 +9,14 @@ import { Input } from '@angular/core';
   styleUrl: './author-card.component.scss'
 })
 export class AuthorCardComponent {
-  @Input() author!: Author
+  @Input({required: true}) author!: Author
+
+  get lifeSpan(){
+
+    if (this.author.death_year && this.author.birth_year) {
+      return this.author.death_year - this.author.birth_year
+    }
+    return undefined
+
+  }
 }
