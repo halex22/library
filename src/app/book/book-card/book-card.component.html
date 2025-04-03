@@ -11,6 +11,9 @@
     </ul>
 
     <p class="book-summary">{{book.summaries[0]}}</p>
+    <div>
+      <a [routerLink]="['/detail',book.id]">Details</a>
+    </div>
   </div>
 
 </div>

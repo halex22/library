@@ -1,13 +1,6 @@
 <header></header>
 
 <main>
-  <ul>
-    <li *ngFor="let book of books">
-      <app-book-card [book]="book"></app-book-card>
-    </li>
-
-    
-  </ul>
+  <router-outlet></router-outlet>
+  
 </main>
-
-<router-outlet></router-outlet>
