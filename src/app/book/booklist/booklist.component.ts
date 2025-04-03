@@ -15,6 +15,6 @@ export class BooklistComponent {
   books: Book[] 
   
   constructor() {
-    this.books = this.bookService.bookList
+    this.books = this.bookService.getBookList()
   }
 }

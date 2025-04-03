@@ -6,16 +6,35 @@ import { type Book } from '../book';
   providedIn: 'root'
 })
 export class BookService {
-  protected books: Book[] = demoBooks
+  private STORAGE_KEY = 'savedBooks'
+  protected books: Book[] = []
 
   constructor() {}
 
-  get bookList() {
+  getBookList() {
+    const userBooks = this.loadBooksFromStorage()
+    this.books = userBooks ? userBooks : demoBooks
     return this.books
+  }
+
+  saveBooksToStorage(): void {
+    console.log('books that will be save', this.books)
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.books))
+  }
+
+  loadBooksFromStorage(): Book[] | null {
+    const books = localStorage.getItem(this.STORAGE_KEY)
+    return  books ? JSON.parse(books) : null
   }
 
   getBookById(idToFind: number): Book | undefined {
     return this.books.find(book => book.id === idToFind)
+  }
+
+  addBook(bookToAdd: Book) {
+    this.books = [...this.books, bookToAdd]
+    console.log(this.books)
+    this.saveBooksToStorage()
   }
 
 }

@@ -1,0 +1,56 @@
+$my-pad: 0.5rem 1rem;
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin borderGray {
+    border: 1px solid gray;
+    border-radius: 1rem;
+}
+
+
+.form-wrapper {
+    @include flexCenter;
+    min-height: 50vh;
+}
+
+form {
+    max-width: 900px;
+    min-width: 50vw;
+    flex-direction: column;
+    @include flexCenter;
+    @include borderGray;
+    padding: 0 2rem;
+}
+
+.btn-container {
+    @include flexCenter;
+
+    button {
+        padding: $my-pad;
+        background-color: transparent;
+        @include borderGray;
+        
+    }
+}
+
+input {
+    padding: $my-pad;
+    border-radius: 0.5rem;
+    border: 1px solid gray;    
+}
+
+input:focus-visible {
+    outline: 2px solid rgb(31, 108, 143);
+    border-radius: 0.5rem;
+    border: none;
+}
+
+
+.input-container {
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+}

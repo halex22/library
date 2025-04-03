@@ -1,1 +1,20 @@
-<p>newbook works!</p>
+<div class="form-wrapper">
+  <form  (submit)="onSubmit()" [formGroup]="bookForm">
+    <div class="input-container">
+      <label for="">Book Title</label>
+      <input type="text" formControlName="title">
+    </div>
+    <div class="input-container">
+      <label for="">Book Author</label>
+      <input type="text" formControlName="author">
+    </div>
+    <div class="input-container">
+      <label for="">Book Summary</label>
+      <input type="text" formControlName="summary">
+    </div>
+
+    <div class="btn-container">
+      <button>save</button>
+    </div>
+  </form>
+</div>
