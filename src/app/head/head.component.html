@@ -1,11 +1,23 @@
 <header>
-  <form action="">
-    <label for="">type a book title</label>
-    <input type="search" name="" id="">
-  </form>
-
   <div>
-    <a [routerLink]="['new-book']">Add Book</a>
-    <a [routerLink]="['/']">Go to Home</a>
+    <a [routerLink]="['/']">
+      <img src="/book-svgrepo-com.svg" alt="">
+    </a>
+    <h1>Library</h1>
   </div>
+
+  <nav>   
+
+    <form action="">
+      <label for="">type a book title</label>
+      <input type="search" name="" id="">
+    </form>
+
+    <div class="new-book-link">
+      <a [routerLink]="['new-book']">Add Book</a>
+    </div>
+
+  </nav>
+
+
 </header>

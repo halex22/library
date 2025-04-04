@@ -12,6 +12,7 @@ export class BookService {
   constructor() {}
 
   getBookList() {
+    if (this.books.length) return this.books
     const userBooks = this.loadBooksFromStorage()
     this.books = userBooks ? userBooks : demoBooks
     return this.books
@@ -28,7 +29,7 @@ export class BookService {
   }
 
   getBookById(idToFind: number): Book | undefined {
-    return this.books.find(book => book.id === idToFind)
+    return this.getBookList().find(book => book.id === idToFind)
   }
 
   addBook(bookToAdd: Book) {

@@ -1,3 +1,18 @@
+<div class="img-container">
+  <img src="{{book?.['image/jpeg']}}" alt="">
+</div>
 <div>
   <h3>{{book?.title}}</h3>
+  <div *ngFor="let author of book?.authors">
+    <app-author-card [author]="author"></app-author-card>
+  </div>
+  <div *ngFor="let summery of book?.summaries">
+    <p [textContent]="summery"></p>
+  </div>
+
+  <ul class="summries-list">
+    <li *ngFor="let subject of book?.subjects" class="summary-item">
+      <span [textContent]="subject" class="summary-text"></span>
+    </li>
+  </ul>
 </div>
